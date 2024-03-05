@@ -1,3 +1,4 @@
+require 'kjaern'
 --[[
 
 =====================================================================
@@ -218,6 +219,8 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
+--
+-- require( 'mbbill/undotree').setup{}
 require('lazy').setup {
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
@@ -440,6 +443,7 @@ require('lazy').setup {
       --    That is to say, every time a new file is opened that is associated with
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
       --    function will be executed to configure the current buffer
+
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -542,8 +546,22 @@ require('lazy').setup {
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
-        --
+         --
 
+        yamlls = {
+          -- other configuration for setup {}
+          settings = {
+            yaml = {
+              -- other settings. note this overrides the lspconfig defaults.
+              schemas = {
+                ["https://json.schemastore.org/bamboo-spec.json"] = "bamboo-specs/*",
+              },
+            },
+          },
+        },
+        
+
+        
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},
@@ -567,6 +585,7 @@ require('lazy').setup {
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
+
             },
           },
         },
@@ -600,6 +619,9 @@ require('lazy').setup {
           end,
         },
       }
+
+
+
     end,
   },
 
@@ -747,6 +769,7 @@ require('lazy').setup {
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
 
+
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
@@ -796,6 +819,8 @@ require('lazy').setup {
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
+
+  
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
