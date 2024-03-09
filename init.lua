@@ -321,6 +321,9 @@ require('lazy').setup {
   {
     'mbbill/undotree',
   },
+  {
+    'mg979/vim-visual-multi',
+  },
 
   -- NOTE: Plugins can specify dependencies.
   --
@@ -819,7 +822,7 @@ require('lazy').setup {
       -- cursor location to LINE:COLUMN
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
-        return '%2l:%-2v'
+        return '%2l:%-2v%2*/%L%'
       end
 
       -- ... and there is more!
