@@ -40,12 +40,13 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         -- 'delve',
-	'debuggy',
+        'debuggy',
       },
-    }	
+    }
 
     -- Basic debugging keymaps, feel free to change to your liking!
     vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
+    vim.keymap.set('n', '<F6>', dap.terminate, { desc = 'Stop: Stop' })
     vim.keymap.set('n', '<F10>', dap.step_into, { desc = 'Debug: Step Into' })
     vim.keymap.set('n', '<F11>', dap.step_over, { desc = 'Debug: Step Over' })
     vim.keymap.set('n', '<F12>', dap.step_out, { desc = 'Debug: Step Out' })
@@ -85,7 +86,6 @@ return {
 
     -- Install golang specific config
     -- require('dap-go').setup()
-    require('dap-python').setup('~/Miniconda3/envs/nvim/python.exe')
-
+    require('dap-python').setup '~/Miniconda3/envs/nvim/python.exe'
   end,
 }
