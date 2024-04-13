@@ -1,4 +1,3 @@
--- debug.lua
 --
 -- Shows how to use the DAP plugin to debug your code.
 --
@@ -21,6 +20,7 @@ return {
     -- Add your own debuggers here
     -- 'leoluz/nvim-dap-go',
     'mfussenegger/nvim-dap-python',
+    'ziglang/zig.vim',
   },
   config = function()
     local dap = require 'dap'
@@ -86,6 +86,24 @@ return {
 
     -- Install golang specific config
     -- require('dap-go').setup()
+    -- require('dap-zig').setup()
     require('dap-python').setup '~/Miniconda3/envs/nvim/python.exe'
+
+    dap.adapters.lldb = {
+      type = 'executable',
+      command = 'C:\\Program Files\\LLVM\\bin\\lldb-dap.exe', -- adjust as needed, must be absolute path
+      name = 'lldb',
+    }
+    dap.configurations.zig = {
+      {
+        name = 'Launch',
+        type = 'lldb',
+        request = 'launch',
+        program = 'C:/Users/Kenneth/Documents/Development/zig/hello/zig-out/bin/hello.exe', --'${workspaceFolder}/zig-out/bin/zig_hello_world.exe',
+        cwd = 'C:/Users/Kenneth/Documents/Development/zig/hello/zig-out/bin',
+        stopOnEntry = false,
+        args = {},
+      },
+    }
   end,
 }
