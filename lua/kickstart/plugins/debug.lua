@@ -87,7 +87,7 @@ return {
     -- Install golang specific config
     -- require('dap-go').setup()
     -- require('dap-zig').setup()
-    require('dap-python').setup '~/Miniconda3/envs/nvim/python.exe'
+    require('dap-python').setup '~/pythonNvim/Scripts/python.exe'
 
     dap.adapters.lldb = {
       type = 'executable',
