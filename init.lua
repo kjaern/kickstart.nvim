@@ -202,10 +202,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -323,23 +323,23 @@ require('lazy').setup {
       harpoon:setup()
       -- REQUIRED
 
-      vim.keymap.set('n', '<leader>a', function()
+      vim.keymap.set('n', '<c-a>', function()
         harpoon:list():append()
       end)
-      vim.keymap.set('n', '<C-s>', function()
+      vim.keymap.set('n', '<c-s>', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end)
 
-      vim.keymap.set('n', '<leader>1', function()
+      vim.keymap.set('n', '<a-1>', function()
         harpoon:list():select(1)
       end)
-      vim.keymap.set('n', '<leader>2', function()
+      vim.keymap.set('n', '<a-2>', function()
         harpoon:list():select(2)
       end)
-      vim.keymap.set('n', '<leader>3', function()
+      vim.keymap.set('n', '<a-3>', function()
         harpoon:list():select(3)
       end)
-      vim.keymap.set('n', '<leader>4', function()
+      vim.keymap.set('n', '<a-4>', function()
         harpoon:list():select(4)
       end)
 
