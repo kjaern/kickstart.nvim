@@ -1,6 +1,7 @@
 return {
-  vim.keymap.set('n', '<leader>pv', vim.cmd.Ex),
-  vim.api.nvim_set_keymap('n', '<C-p>', ":lua require'telescope'.extensions.project.project{}<CR>", { noremap = true, silent = true }),
+  -- vim.keymap.set('n', '<leader>pv', vim.cmd.Ex),
+  vim.api.nvim_set_keymap('n', '<C-p>', ":lua require'telescope'.extensions.project.project{}<CR>",
+    { noremap = true, silent = true }),
   vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv"),
   vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv"),
 
@@ -21,7 +22,7 @@ return {
   vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]]),
 
   -- This is going to get me cancelled
-  vim.keymap.set({ 'i', 'v' }, 'jj', '<Esc>'),
+  --vim.keymap.set({ 'i', 'v' }, 'jj', '<Esc>'),
 
   vim.keymap.set('n', 'Q', '<nop>'),
   vim.keymap.set('n', '<leader>f', vim.lsp.buf.format),
