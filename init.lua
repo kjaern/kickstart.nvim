@@ -701,6 +701,8 @@ require('lazy').setup {
   require 'kickstart.plugins.gitsigns',
   require 'kickstart.plugins.filetree',
   require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.oil',
+  require 'kickstart.plugins.git-worktree',
   require 'kickstart.plugins.indent_line',
   require 'kjaern.remap',
   require 'kjaern.kjaer',
