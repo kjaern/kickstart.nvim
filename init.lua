@@ -427,6 +427,10 @@ require('lazy').setup {
         },
       }
 
+
+      vim.cmd([[ let g:python3_host_prog ='~/pythonNvim/Scripts/python.exe' ]])
+
+
       -- Enable telescope extensions, if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
@@ -706,6 +710,7 @@ require('lazy').setup {
   require 'kickstart.plugins.indent_line',
   require 'kjaern.remap',
   require 'kjaern.kjaer',
+  require 'kjaern.local',
   require 'kjaern.undotree',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
