@@ -323,8 +323,8 @@ require('lazy').setup {
       harpoon:setup()
       -- REQUIRED
 
-      vim.keymap.set('n', '<c-a>', function()
-        harpoon:list():add()
+      vim.keymap.set('n', '<c-z>', function()
+        harpoon:list():append()
       end)
       vim.keymap.set('n', '<c-s>', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
